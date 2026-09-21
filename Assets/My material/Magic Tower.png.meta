@@ -1,0 +1,678 @@
+fileFormatVersion: 2
+guid: 8ac393416bb10364b82afbcda4ce5678
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1192018219583780447
+    second: Magic Tower_0
+  - first:
+      213: -2382068833219953703
+    second: Magic Tower_1
+  - first:
+      213: 5044461731611239241
+    second: Magic Tower_2
+  - first:
+      213: 6704580251450621965
+    second: Magic Tower_3
+  - first:
+      213: -782835950047977890
+    second: Magic Tower_4
+  - first:
+      213: 4538852156830119387
+    second: Magic Tower_5
+  - first:
+      213: -5008245001012324352
+    second: Magic Tower_6
+  - first:
+      213: 7887743754498824900
+    second: Magic Tower_7
+  - first:
+      213: -2916579958247867403
+    second: Magic Tower_8
+  - first:
+      213: 8604928585413622795
+    second: Magic Tower_9
+  - first:
+      213: 6968084488356273349
+    second: Magic Tower_10
+  - first:
+      213: -5599133106743810017
+    second: Magic Tower_11
+  - first:
+      213: -6152606295774518045
+    second: Magic Tower_12
+  - first:
+      213: -8403765429197812504
+    second: Magic Tower_13
+  - first:
+      213: -7805876408778698450
+    second: Magic Tower_14
+  - first:
+      213: 4633381497510701012
+    second: Magic Tower_15
+  - first:
+      213: -8500740509084458850
+    second: Magic Tower_16
+  - first:
+      213: -2060366554445153366
+    second: Magic Tower_17
+  - first:
+      213: 9184479904368143173
+    second: Magic Tower_18
+  - first:
+      213: -2219982007022083931
+    second: Magic Tower_19
+  - first:
+      213: 1000492278753867698
+    second: Magic Tower_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Magic Tower_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 581
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a94aefaeb9157fe0800000000000000
+      internalID: -1192018219583780447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_1
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 581
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9db3565540131fed0800000000000000
+      internalID: -2382068833219953703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_2
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 683
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9436dbbd737810640800000000000000
+      internalID: 5044461731611239241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_3
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 581
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0040df57347b0d50800000000000000
+      internalID: 6704580251450621965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_4
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 485
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5e1cffd9dec225f0800000000000000
+      internalID: -782835950047977890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_5
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 389
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd5ffdf1dfd3dfe30800000000000000
+      internalID: 4538852156830119387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_6
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 485
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008d886d4b32f7ab0800000000000000
+      internalID: -5008245001012324352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_7
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 389
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca55365725e67d60800000000000000
+      internalID: 7887743754498824900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_8
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 479
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fbbc9d0bf93687d0800000000000000
+      internalID: -2916579958247867403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_9
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 389
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0cfe2325f8da6770800000000000000
+      internalID: 8604928585413622795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_10
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 287
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc92657ceb93b060800000000000000
+      internalID: 6968084488356273349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_11
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 197
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18e76ada12eb42b0800000000000000
+      internalID: -5599133106743810017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_12
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 287
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e427810c2d8d9aa0800000000000000
+      internalID: -6152606295774518045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_13
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 197
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ecc4f00ed3df5b80800000000000000
+      internalID: -8403765429197812504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_14
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 293
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e21d42673c4fba390800000000000000
+      internalID: -7805876408778698450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_15
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 197
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d72efb5ce31d4040800000000000000
+      internalID: 4633381497510701012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_16
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 101
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e906f3cbb8d470a80800000000000000
+      internalID: -8500740509084458850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_17
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 5
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab7337f88b1863e0800000000000000
+      internalID: -2060366554445153366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_18
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 107
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54ba392cfc3d57f70800000000000000
+      internalID: 9184479904368143173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_19
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 5
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a0a0b7602a0131e0800000000000000
+      internalID: -2219982007022083931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Magic Tower_20
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 5
+        width: 140
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b735ab3d6672ed00800000000000000
+      internalID: 1000492278753867698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Magic Tower_0: -1192018219583780447
+      Magic Tower_1: -2382068833219953703
+      Magic Tower_10: 6968084488356273349
+      Magic Tower_11: -5599133106743810017
+      Magic Tower_12: -6152606295774518045
+      Magic Tower_13: -8403765429197812504
+      Magic Tower_14: -7805876408778698450
+      Magic Tower_15: 4633381497510701012
+      Magic Tower_16: -8500740509084458850
+      Magic Tower_17: -2060366554445153366
+      Magic Tower_18: 9184479904368143173
+      Magic Tower_19: -2219982007022083931
+      Magic Tower_2: 5044461731611239241
+      Magic Tower_20: 1000492278753867698
+      Magic Tower_3: 6704580251450621965
+      Magic Tower_4: -782835950047977890
+      Magic Tower_5: 4538852156830119387
+      Magic Tower_6: -5008245001012324352
+      Magic Tower_7: 7887743754498824900
+      Magic Tower_8: -2916579958247867403
+      Magic Tower_9: 8604928585413622795
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
