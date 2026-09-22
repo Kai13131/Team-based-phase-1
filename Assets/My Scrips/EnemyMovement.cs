@@ -11,8 +11,10 @@ public class EnemyMovement : MonoBehaviour
     }
     public EnemyState currentState;
 
-    public Transform[] waypoints; // Array of waypoints for the enemy to follow
-    private int currentWaypointIndex = 0; // Index of the current waypoint
+    // Array of waypoints for the enemy to follow
+    public Transform[] waypoints;
+    // Index of the current waypoint
+    private int currentWaypointIndex = 0; 
 
     public float normalSpeed = 2f;
     public float slowedSpeed = 1f;
@@ -22,14 +24,18 @@ public class EnemyMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        currentSpeed = normalSpeed; // Initialize current speed to normal speed
-        currentState = EnemyState.Moving; // Set the initial state of the enemy to Moving
+        // Initialize current speed to normal speed
+        currentSpeed = normalSpeed;
+        // Set the initial state of the enemy to Moving
+        currentState = EnemyState.Moving; 
 
         GameObject waypointParent = GameObject.Find("Way_Point_Manager");
-        waypoints = new Transform[waypointParent.transform.childCount]; // Initialize the waypoints array based on the number of child objects
+        // Initialize the waypoints array based on the number of child objects
+        waypoints = new Transform[waypointParent.transform.childCount]; 
         for (int i = 0; i < waypoints.Length; i++)
         {
-            waypoints[i] = waypointParent.transform.GetChild(i); // Assign each child transform to the waypoints array
+            // Assign each child transform to the waypoints array
+            waypoints[i] = waypointParent.transform.GetChild(i); 
         }
     }
 
@@ -37,8 +43,6 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         StateSwitch(); // Call the method to handle state-based behavior
-
-
     }
 
     void StateSwitch()
@@ -63,13 +67,16 @@ public class EnemyMovement : MonoBehaviour
 
         if (currentWaypointIndex >= waypoints.Length)
         {
-            Destroy(gameObject); // Destroy the enemy when it reaches the end of the waypoints
-            GameManager.Instance.baseHealth--; // Decrease the base health when an enemy reaches the end of the waypoints
+            // Destroy the enemy when it reaches the end of the waypoints
+            Destroy(gameObject);
+            // Decrease the base health when an enemy reaches the end of the waypoints
+            GameManager.Instance.baseHealth--; 
             Debug.Log("Enemy reached the base! Base health: " + GameManager.Instance.baseHealth);
 
             return; // No more waypoints to follow    
         }
-        Transform target = waypoints[currentWaypointIndex]; // Get the current target waypoint
+        // Get the current target waypoint
+        Transform target = waypoints[currentWaypointIndex]; 
 
         transform.position = Vector3.MoveTowards(
             transform.position,
@@ -79,16 +86,19 @@ public class EnemyMovement : MonoBehaviour
 
         if (Vector2.Distance(transform.position, target.position) < 0.1f)
         {
-            currentWaypointIndex++; // Move to the next waypoint when close enough to the current one
+            // Move to the next waypoint when close enough to the current one
+            currentWaypointIndex++; 
         }
 
         if (currentState == EnemyState.Slowed)
         {
-            GetComponent<SpriteRenderer>().color = Color.blue; // Change the enemy's color to blue when slowed
+            // Change the enemy's color to blue when slowed
+            GetComponent<SpriteRenderer>().color = Color.blue; 
         }
         else
         {
-            GetComponent<SpriteRenderer>().color = Color.red; // Reset the enemy's color to white when not slowed
+            // Reset the enemy's color to white when not slowed
+            GetComponent<SpriteRenderer>().color = Color.red; 
         }
     }
 

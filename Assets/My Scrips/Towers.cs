@@ -76,6 +76,7 @@ public class Towers : MonoBehaviour
             transform.position,
             Quaternion.identity
             );
+
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         bulletScript.damage = bulletDamage;
 

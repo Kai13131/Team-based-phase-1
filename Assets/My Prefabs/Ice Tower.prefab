@@ -105,9 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb1968cbdccfb44cb1ecae730255c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Towers
-  towerType: 0
+  towerType: 1
   range: 3
-  bulletPrefab: {fileID: 202945021396969657, guid: 8f8d5ad7de1eb6c4bbc28c35a06a755c, type: 3}
+  bulletPrefab: {fileID: 202945021396969657, guid: 7521a0b28d0d36b458841bdafcba84ee, type: 3}
   fireRate: 1
   bulletDamage: 1
   cost: 50

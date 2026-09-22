@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -5832416120597767370}
   - component: {fileID: 8331444111702230213}
   m_Layer: 0
-  m_Name: Bullet
+  m_Name: Ice Bullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4022468921447242452, guid: 49dcc9f220a1bfa4a9cacc5d156afdda, type: 3}
-  m_Color: {r: 1, g: 0.66342616, b: 0, a: 1}
+  m_Sprite: {fileID: 9192115561842821961, guid: 7f1c751ae1f59bf4bb2768687239da3c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.76, y: 1.59}
+    oldSize: {x: 0.52, y: 0.86}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
