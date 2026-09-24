@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8076980088626404604}
   - component: {fileID: 6497082111033435933}
-  - component: {fileID: -5832416120597767370}
   - component: {fileID: 8331444111702230213}
+  - component: {fileID: 111937336376583218}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202945021396969657}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.27017, y: -1.5009, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.43335232, w: 0.9012247}
+  m_LocalPosition: {x: 5.258228, y: -1.4951904, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -51.361}
 --- !u!212 &6497082111033435933
 SpriteRenderer:
   serializedVersion: 3
@@ -94,7 +94,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!61 &-5832416120597767370
+--- !u!114 &8331444111702230213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202945021396969657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1355af4bce314b041a1de8ac46a01165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  target: {fileID: 5237594302793104554, guid: af2685c92ce224049b22a65bd7b39121, type: 3}
+  speed: 8
+  damage: 1
+  appliesSlow: 0
+--- !u!61 &111937336376583218
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,7 +144,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.08736719}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -138,21 +154,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1.76, y: 0.5849705}
   m_EdgeRadius: 0
---- !u!114 &8331444111702230213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202945021396969657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1355af4bce314b041a1de8ac46a01165, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  target: {fileID: 5237594302793104554, guid: af2685c92ce224049b22a65bd7b39121, type: 3}
-  speed: 8
-  damage: 1
-  appliesSlow: 0

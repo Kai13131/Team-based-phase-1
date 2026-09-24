@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
             speed * Time.deltaTime
             );
 
+
         //calculate the distance if bullete close enough to nemey
         if (Vector2.Distance(transform.position, target.position) < 0.1f)
         {

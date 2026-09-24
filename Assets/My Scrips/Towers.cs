@@ -17,10 +17,10 @@ public class Towers : MonoBehaviour
     public int bulletDamage = 1;
     public int cost = 50; // Cost of the tower
 
-    public Animator animator;
+    //public Animator animator;
 
-    public AudioSource audioSource;
-    public AudioClip shootSound;
+    //public AudioSource audioSource;
+    //public AudioClip shootSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,8 +39,8 @@ public class Towers : MonoBehaviour
             {
                 Shoot(target);
 
-                animator.SetTrigger("Shoot");
-                audioSource.PlayOneShot(shootSound);
+                //animator.SetTrigger("Shoot");
+                //audioSource.PlayOneShot(shootSound);
 
                 fireCountdown = fireRate;
             }
@@ -80,7 +80,7 @@ public class Towers : MonoBehaviour
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         bulletScript.damage = bulletDamage;
 
-        bulletScript.target = enemy.transform;
+        bulletScript.target = enemy.transform;  
 
 
 
