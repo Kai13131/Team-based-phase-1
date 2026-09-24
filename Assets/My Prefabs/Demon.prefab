@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2187154349368184900}
   - component: {fileID: -7384301716867366989}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Demon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,8 +123,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  normalSpeed: 2
-  slowedSpeed: 1
+  normalSpeed: 1
+  slowedSpeed: 0.5
 --- !u!61 &-2187154349368184900
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -183,4 +183,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0515ca126facf4f40a8bf40b70852120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  health: 3
+  health: 60

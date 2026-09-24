@@ -98,7 +98,7 @@ public class EnemyMovement : MonoBehaviour
         else
         {
             // Reset the enemy's color to white when not slowed
-            GetComponent<SpriteRenderer>().color = Color.red; 
+            GetComponent<SpriteRenderer>().color = Color.white; 
         }
     }
 
