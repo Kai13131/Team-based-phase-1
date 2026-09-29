@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public float score;
 
     public GameObject gameOverPanel;
-
+    public GameObject gamePausePanel;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         BaseDestroyed(); // Check if the base has been destroyed and handle game over logic if necessary
+        Pause();
     }
 
     public void AddMoney(int mount)
@@ -68,10 +69,24 @@ public class GameManager : MonoBehaviour
             gameOverPanel.SetActive(true);
         }
     }
-
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void Pause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !gamePausePanel.activeSelf)
+        {
+            Time.timeScale = 0f;
+            gamePausePanel.SetActive(true);
+            Debug.Log("pause");
+        }
+        if (Input.GetKeyDown(KeyCode.Escape) && gamePausePanel.activeSelf)
+        {
+            Time.timeScale = 1f;
+            gamePausePanel.SetActive(false);
+            Debug.Log("Continues");
+        }
+    }
 }

@@ -460,7 +460,7 @@ MonoBehaviour:
   baseHealth: 10
   currentWave: 0
   score: 0
-  gameOverPanel: {fileID: 0}
+  gameOverPanel: {fileID: 1898805073}
 --- !u!1 &308337089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,7 +1756,7 @@ MonoBehaviour:
   spawnPosition: {fileID: 1463000865}
   spawnRate: 15
   maxWaves: 10
-  waveInterval: 60
+  waveInterval: 10
   currentWave: 0
   timer: 0
   enemySpawnCount: 10
