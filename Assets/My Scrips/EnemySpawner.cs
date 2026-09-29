@@ -92,7 +92,7 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemy(GameObject enemy, int index)
     {
         float randomX = Random.Range(1, -1);
-        float randomY = Random.Range(1, 5);
+        float randomY = Random.Range(1, 10);
 
         Instantiate(enemy, spawnPosition.position + new Vector3(randomX, randomY, 0), Quaternion.identity);
     }
