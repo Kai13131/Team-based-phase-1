@@ -24,7 +24,6 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log("Enemy died.");
         GameManager.Instance.AddMoney(10); // Add money to the player's total when the enemy dies
-        GameManager.Instance.ScoreUpdate(5);
         Destroy(gameObject); // Destroy the enemy game object
     }
 

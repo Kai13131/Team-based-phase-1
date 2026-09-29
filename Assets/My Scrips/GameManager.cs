@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     public int baseHealth = 10;
     public int currentWave = 0;
     public float score;
+
+    public GameObject gameOverPanel;
 
 
 
@@ -52,11 +55,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ScoreUpdate(int mount)
-    {
-        score += mount;
-    }
-
     public void GetCurrentWave(int wave)
     {
         currentWave = wave;
@@ -67,10 +65,13 @@ public class GameManager : MonoBehaviour
         if (baseHealth <= 0)
         {
             Debug.Log("Game Over!");
-            SceneManager.LoadScene("GameOverScene");
-            // Implement game over logic here (e.g., show game over screen, restart game, etc.)
-
+            gameOverPanel.SetActive(true);
         }
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
