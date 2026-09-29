@@ -76,13 +76,13 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !gamePausePanel.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 0f;
             gamePausePanel.SetActive(true);
             Debug.Log("pause");
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && gamePausePanel.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Time.timeScale = 1f;
             gamePausePanel.SetActive(false);
