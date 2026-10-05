@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public int health = 3; // Maximum health of the enemy
+    public float health = 3; // Maximum health of the enemy
 
-    public void SetHealth(int mount)
+    public void SetHealth()
     {
-        health = mount; // Set the enemy's health to the specified amount
+        int wave = GameManager.Instance.currentWave;
+        health = health * wave * 0.5f;
     }
 
     public void TakeDamage(int damage)
@@ -23,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy died.");
-        GameManager.Instance.AddMoney(10); // Add money to the player's total when the enemy dies
+        GameManager.Instance.AddMoney(20); // Add money to the player's total when the enemy dies
         Destroy(gameObject); // Destroy the enemy game object
     }
 

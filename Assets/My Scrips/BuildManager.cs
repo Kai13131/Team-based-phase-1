@@ -31,7 +31,7 @@ public class BuildManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             selectedTower = null;
             buildTiles.SetActive(false);
@@ -68,23 +68,37 @@ public class BuildManager : MonoBehaviour
         }
     }
 
-    public bool BuildTower(Vector3 position)
+    public bool BuildTower(Vector3 position, BuildTile tile)
     {
+        if (selectedTower == null)
+        {
+            Debug.Log("Please select a tower first!");
+            return false;
+        }
+
         Towers towerData = selectedTower.GetComponent<Towers>();
+
+        if (towerData == null)
+        {
+            Debug.LogError("Selected tower does not have a Towers component!");
+            return false;
+        }
 
         if (GameManager.Instance.SpendMoney(towerData.cost))
         {
-            Instantiate(selectedTower, position, Quaternion.identity);
+            GameObject newTower = Instantiate(selectedTower, position, Quaternion.identity);
+            tile.SetTower(newTower);
+
             buildTiles.SetActive(false);
 
             audioSource.PlayOneShot(buildedSound);
 
-            return true; // Tower built successfully
+            return true;
         }
         else
         {
             Debug.Log("Not enough money!");
+            return false;
         }
-        return false;
     }
 }

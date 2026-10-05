@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameOverPanel;
     public GameObject gamePausePanel;
-
+    public GameObject gameWinPanel;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -78,15 +78,20 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Time.timeScale = 0f;
-            gamePausePanel.SetActive(true);
-            Debug.Log("pause");
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Time.timeScale = 1f;
-            gamePausePanel.SetActive(false);
-            Debug.Log("Continues");
+            if (Time.timeScale == 1f)
+            {
+                // Pause
+                Time.timeScale = 0f;
+                gamePausePanel.SetActive(true);
+                Debug.Log("Pause");
+            }
+            else
+            {
+                // Continue
+                Time.timeScale = 1f;
+                gamePausePanel.SetActive(false);
+                Debug.Log("Continues");
+            }
         }
     }
 }

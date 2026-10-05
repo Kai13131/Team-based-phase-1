@@ -122,8 +122,11 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  normalSpeed: 2
-  slowedSpeed: 1
+  waypoints_1: []
+  waypoints_2: []
+  pathNumber: 0
+  normalSpeed: 1
+  slowedSpeed: 0.5
 --- !u!114 &-844974736543002708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,4 +139,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0515ca126facf4f40a8bf40b70852120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  health: 40
+  health: 60

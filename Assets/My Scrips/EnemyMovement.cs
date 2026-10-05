@@ -13,6 +13,9 @@ public class EnemyMovement : MonoBehaviour
 
     // Array of waypoints for the enemy to follow
     public Transform[] waypoints;
+    public Transform[] waypoints_1;
+    public Transform[] waypoints_2;
+    public int pathNumber = 0;
     // Index of the current waypoint
     private int currentWaypointIndex = 0; 
 
@@ -30,12 +33,38 @@ public class EnemyMovement : MonoBehaviour
         currentState = EnemyState.Moving; 
 
         GameObject waypointParent = GameObject.Find("Way_Point_Manager");
+        GameObject waypointParent_1 = GameObject.Find("Way_Point_Manager_1");
+        GameObject waypointParent_2 = GameObject.Find("Way_Point_Manager_2");
+
         // Initialize the waypoints array based on the number of child objects
-        waypoints = new Transform[waypointParent.transform.childCount]; 
-        for (int i = 0; i < waypoints.Length; i++)
+        waypoints = new Transform[waypointParent.transform.childCount];
+        waypoints_1 = new Transform[waypointParent_1.transform.childCount];
+        waypoints_2 = new Transform[waypointParent_2.transform.childCount];
+
+        if (pathNumber == 0)
         {
-            // Assign each child transform to the waypoints array
-            waypoints[i] = waypointParent.transform.GetChild(i); 
+            for (int i = 0; i < waypoints.Length; i++)
+            {
+                // Assign each child transform to the waypoints array
+                waypoints[i] = waypointParent.transform.GetChild(i);
+            }
+        }
+        else if (pathNumber == 1)
+        {
+
+            for (int i = 0; i < waypoints.Length; i++)
+            {
+                // Assign each child transform to the waypoints array
+                waypoints_1[i] = waypointParent_1.transform.GetChild(i);
+            }
+        }
+        else if(pathNumber == 2)
+        {
+            for (int i = 0; i < waypoints.Length; i++)
+            {
+                // Assign each child transform to the waypoints array
+                waypoints_2[i] = waypointParent_2.transform.GetChild(i);
+            }
         }
     }
 
@@ -75,19 +104,55 @@ public class EnemyMovement : MonoBehaviour
 
             return; // No more waypoints to follow    
         }
+
         // Get the current target waypoint
-        Transform target = waypoints[currentWaypointIndex]; 
-
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            target.position,
-            currentSpeed * Time.deltaTime
-            ); // Move towards the target waypoint
-
-        if (Vector2.Distance(transform.position, target.position) < 0.1f)
+        if(pathNumber == 0)
         {
-            // Move to the next waypoint when close enough to the current one
-            currentWaypointIndex++; 
+            Transform target = waypoints[currentWaypointIndex];
+
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                target.position,
+                currentSpeed * Time.deltaTime
+                ); // Move towards the target waypoint
+
+            if (Vector2.Distance(transform.position, target.position) < 0.1f)
+            {
+                // Move to the next waypoint when close enough to the current one
+                currentWaypointIndex++;
+            }
+        }
+        else if(pathNumber == 1)
+        {
+            Transform target = waypoints_1[currentWaypointIndex];
+
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                target.position,
+                currentSpeed * Time.deltaTime
+                ); // Move towards the target waypoint
+
+            if (Vector2.Distance(transform.position, target.position) < 0.1f)
+            {
+                // Move to the next waypoint when close enough to the current one
+                currentWaypointIndex++;
+            }
+        }
+        else if(pathNumber == 2)
+        {
+            Transform target = waypoints_2[currentWaypointIndex];
+
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                target.position,
+                currentSpeed * Time.deltaTime
+                ); // Move towards the target waypoint
+
+            if (Vector2.Distance(transform.position, target.position) < 0.1f)
+            {
+                // Move to the next waypoint when close enough to the current one
+                currentWaypointIndex++;
+            }
         }
 
         if (currentState == EnemyState.Slowed)

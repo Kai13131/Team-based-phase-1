@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -5,13 +6,15 @@ public class EnemySpawner : MonoBehaviour
     public GameObject demonPrefab; // Reference to the enemy prefab
     public GameObject cyclopsPrefab; // Reference to the enemy prefab
     public GameObject nueNIPrefab; // Reference to the enemy prefab
+    public GameObject bossPrefab;
 
     public Transform spawnPosition; // Position where enemies will be spawned
-
+    public Transform spawnPosition_1;
+    public Transform spawnPosition_2;
     public float spawnRate = 2f; // Time interval between spawns
 
     public int maxWaves = 10;
-    public float waveInterval = 60f;
+    public float waveInterval = 30f;
     public int currentWave = 0;
     public float timer = 0f;
     public int enemySpawnCount = 10;
@@ -19,81 +22,161 @@ public class EnemySpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //InvokeRepeating("SpawnEnemy", 1f, spawnRate); // Start spawning enemies at regular intervals    
-
-        StartWave();
+        StartCoroutine(WaveManager());
     }
 
-    void Update()
+    IEnumerator WaveManager()
     {
-        if (currentWave >= maxWaves)
+        while (currentWave < maxWaves)
         {
-            return;
-        }
-        timer -= Time.deltaTime;
-        if (timer < 0f)
-        {
-            StartWave();
-        }
+            currentWave++;
 
-    }
-    void StartWave()
-    {
-        currentWave++;
-        GameManager.Instance.GetCurrentWave(currentWave);
+            // Tell GameManager the current wave
+            GameManager.Instance.GetCurrentWave(currentWave);
 
-        Debug.Log("Wave " + currentWave + " started!");
+            Debug.Log("Wave " + currentWave + " started!");
 
-        // Spawn enemies for this wave
-        SpawnEnemies();
+            // Start spawning enemies for this wave
+            yield return StartCoroutine(SpawnWave());
 
-        // Reset timer to 60 seconds
-        timer = waveInterval;
-    }
-    void SpawnEnemies() 
-    {
-        
-        if(currentWave <= 2)
-        {
-            for (int i = 0; i < currentWave + enemySpawnCount; i++)
+            // Wait until the next wave
+            if (currentWave < maxWaves)
             {
-                SpawnEnemy(demonPrefab, i);
+                Debug.Log("Wave " + currentWave + " finished. Next wave in 30 seconds.");
+
+                yield return new WaitForSeconds(waveInterval);
             }
         }
-        else if(currentWave <= 5)
-        {
-            for(int i = 0;i < currentWave + enemySpawnCount; i++)
-            {
-                SpawnEnemy(demonPrefab, i);
-            }
-            for (int i = 0; i < currentWave + enemySpawnCount; i++)
-            {
-                SpawnEnemy(nueNIPrefab, i);
-            }
-        }
-        else if(currentWave <= 10)
-        {
-            for (int i = 0; i < currentWave + enemySpawnCount; i++)
-            {
-                SpawnEnemy(demonPrefab, i);
 
-            }
-            for (int i = 0; i < currentWave + enemySpawnCount; i++)
-            {
-                SpawnEnemy(nueNIPrefab, i);
-            }
-            for (int i = 0; i < currentWave + enemySpawnCount; i++)
-            {
-                SpawnEnemy(cyclopsPrefab, i);
-            }
-        }
+        Debug.Log("All 10 waves completed!");
     }
 
-    void SpawnEnemy(GameObject enemy, int index)
+    IEnumerator SpawnWave()
     {
-        float randomX = Random.Range(1, -1);
-        float randomY = Random.Range(1, 10);
+        // Wave 1-2
+        if (currentWave <= 2)
+        {
+            for (int i = 0; i < enemySpawnCount; i++)
+            {
+                SpawnEnemy(demonPrefab, spawnPosition, 0);
 
-        Instantiate(enemy, spawnPosition.position + new Vector3(randomX, randomY, 0), Quaternion.identity);
+                yield return new WaitForSeconds(spawnRate);
+            }
+        }
+
+        // Wave 3-4
+        else if (currentWave <= 4)
+        {
+            for (int i = 0; i < enemySpawnCount; i++)
+            {
+                // Nue-Ni
+                SpawnEnemy(nueNIPrefab, spawnPosition, 0);
+
+                yield return new WaitForSeconds(spawnRate);
+
+                // Demon
+                SpawnEnemy_1(demonPrefab, spawnPosition_1, 1);
+
+                yield return new WaitForSeconds(spawnRate);
+
+                SpawnEnemy_1(demonPrefab, spawnPosition_1, 1);
+
+                yield return new WaitForSeconds(spawnRate);
+            }
+        }
+
+        // Wave 5-6
+        else if (currentWave <= 6)
+        {
+            for (int i = 0; i < enemySpawnCount; i++)
+            {
+                // Nue-Ni
+                SpawnEnemy_1(nueNIPrefab, spawnPosition_1, 1);
+
+                yield return new WaitForSeconds(spawnRate);
+
+                // Demon
+                SpawnEnemy(demonPrefab, spawnPosition, 0);
+
+                yield return new WaitForSeconds(spawnRate);
+
+                // Cyclops
+                SpawnEnemy_1(cyclopsPrefab, spawnPosition_1, 1);
+
+                yield return new WaitForSeconds(spawnRate);
+            }
+        }
+
+        // Wave 7-9
+        else if (currentWave <= 9)
+        {
+            for (int i = 0; i < enemySpawnCount; i++)
+            {
+                // Nue-Ni
+                SpawnEnemy_1(nueNIPrefab, spawnPosition_1, 1);
+
+                yield return new WaitForSeconds(spawnRate);
+
+                // Demon
+                SpawnEnemy(demonPrefab, spawnPosition, 0);
+                SpawnEnemy_2(demonPrefab, spawnPosition_2, 2);
+
+                yield return new WaitForSeconds(spawnRate);
+
+                // Cyclops
+                SpawnEnemy_1(cyclopsPrefab, spawnPosition_1, 1);
+
+                yield return new WaitForSeconds(spawnRate);
+            }
+        }
+
+        // Wave 10
+        else if (currentWave == 10)
+        {
+            // Boss spawns once
+            SpawnEnemy_1(bossPrefab, spawnPosition_1, 1);
+
+            Debug.Log("BOSS HAS SPAWNED!");
+        }
+    }
+
+    void SpawnEnemy(GameObject enemy, Transform spawnPoint, int pathNumber)
+    {
+
+        float randomX = Random.Range(-1f, 1f);
+        float randomY = Random.Range(1f, 10f);
+
+        Vector3 spawnPosition = spawnPoint.position + new Vector3(randomX, randomY, 0f);
+
+        GameObject newEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
+
+        EnemyMovement movement = newEnemy.GetComponent<EnemyMovement>();
+        movement.pathNumber = pathNumber;
+    }
+    void SpawnEnemy_1(GameObject enemy, Transform spawnPoint, int pathNumber)
+    {
+
+        float randomX = Random.Range(1f, 10f);
+        float randomY = Random.Range(-1f, 1f);
+
+        Vector3 spawnPosition = spawnPoint.position + new Vector3(randomX, randomY, 0f);
+
+        GameObject newEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
+
+        EnemyMovement movement = newEnemy.GetComponent<EnemyMovement>();
+        movement.pathNumber = pathNumber;
+    }
+    void SpawnEnemy_2(GameObject enemy, Transform spawnPoint, int pathNumber)
+    {
+
+        float randomX = Random.Range(-1f, 1f);
+        float randomY = Random.Range(-10f, 1f);
+
+        Vector3 spawnPosition = spawnPoint.position + new Vector3(randomX, randomY, 0f);
+
+        GameObject newEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
+
+        EnemyMovement movement = newEnemy.GetComponent<EnemyMovement>();
+        movement.pathNumber = pathNumber;
     }
 }
