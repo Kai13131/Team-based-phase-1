@@ -106,12 +106,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb1968cbdccfb44cb1ecae730255c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Towers
-  towerType: 1
-  range: 7
-  bulletPrefab: {fileID: 202945021396969657, guid: 7521a0b28d0d36b458841bdafcba84ee, type: 3}
-  fireRate: 1
-  bulletDamage: 15
   cost: 140
+  towerType: 1
+  bulletPrefab: {fileID: 202945021396969657, guid: 7521a0b28d0d36b458841bdafcba84ee, type: 3}
+  attackSpeed: 1
+  range: 7
+  bulletDamage: 15
+  upgradeLevel: 1
+  maxUpgradeLevel: 2
+  upgradeCost: 50
+  level1Sprite: {fileID: -222087461200727013, guid: bd9c845964c893f4cb3b53a432eed8c4, type: 3}
+  level2Sprite: {fileID: -6055878013986411905, guid: 2e1ef1251420e85468fe5b3e3907adb0, type: 3}
 --- !u!61 &-2339384655110133767
 BoxCollider2D:
   m_ObjectHideFlags: 0

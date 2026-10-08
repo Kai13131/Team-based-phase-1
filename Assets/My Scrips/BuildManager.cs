@@ -3,7 +3,7 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager Instance;
-
+    //Tower prefabs
     public GameObject HolyTowerPrefab;
     public GameObject IceTowerPrefab;
     public GameObject MagicTowerPrefab;
@@ -11,10 +11,6 @@ public class BuildManager : MonoBehaviour
     private GameObject selectedTower;
 
     public GameObject buildTiles;
-
-    public AudioSource audioSource;
-    public AudioClip selectSound;
-    public AudioClip buildedSound;
 
     void Awake()
     {
@@ -35,8 +31,6 @@ public class BuildManager : MonoBehaviour
         {
             selectedTower = null;
             buildTiles.SetActive(false);
-            audioSource.PlayOneShot(selectSound);
-
             Debug.Log("Deselected Tower");
         }
 
@@ -44,8 +38,6 @@ public class BuildManager : MonoBehaviour
         {
             selectedTower = HolyTowerPrefab;
             Debug.Log("Selected Standard Tower");
-            audioSource.PlayOneShot(selectSound);
-
             buildTiles.SetActive(true);
         }
 
@@ -53,8 +45,6 @@ public class BuildManager : MonoBehaviour
         {
             selectedTower = IceTowerPrefab;
             Debug.Log("Selected Slow Tower");
-            audioSource.PlayOneShot(selectSound);
-
             buildTiles.SetActive(true);
 
         }
@@ -62,8 +52,6 @@ public class BuildManager : MonoBehaviour
         {
             selectedTower = MagicTowerPrefab;
             Debug.Log("Selected Advanced Tower");
-            audioSource.PlayOneShot(selectSound);
-
             buildTiles.SetActive(true);
         }
     }
@@ -87,12 +75,18 @@ public class BuildManager : MonoBehaviour
         if (GameManager.Instance.SpendMoney(towerData.cost))
         {
             GameObject newTower = Instantiate(selectedTower, position, Quaternion.identity);
+
             tile.SetTower(newTower);
 
+            Towers newTowerScript = newTower.GetComponent<Towers>();
+
+            if (newTowerScript != null)
+            {
+                newTowerScript.SetBuildTile(tile);
+            }
+
             buildTiles.SetActive(false);
-
-            audioSource.PlayOneShot(buildedSound);
-
+            Debug.Log("Tower built");
             return true;
         }
         else

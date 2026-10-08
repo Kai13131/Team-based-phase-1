@@ -1,0 +1,651 @@
+fileFormatVersion: 2
+guid: 9ad117889e3e86e4dbf4872e715d2b35
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2277570890114938479
+    second: Upgraded Magic Tower (1)_0
+  - first:
+      213: -7787517300010099389
+    second: Upgraded Magic Tower (1)_1
+  - first:
+      213: 6718976874506091214
+    second: Upgraded Magic Tower (1)_2
+  - first:
+      213: -4848329805908425104
+    second: Upgraded Magic Tower (1)_3
+  - first:
+      213: 1627064376816280239
+    second: Upgraded Magic Tower (1)_4
+  - first:
+      213: 5979476607233592864
+    second: Upgraded Magic Tower (1)_5
+  - first:
+      213: 1554275031401637891
+    second: Upgraded Magic Tower (1)_6
+  - first:
+      213: 7660939855756580079
+    second: Upgraded Magic Tower (1)_7
+  - first:
+      213: 4784097525986420965
+    second: Upgraded Magic Tower (1)_8
+  - first:
+      213: -7933024498316791145
+    second: Upgraded Magic Tower (1)_9
+  - first:
+      213: 6221477378562587995
+    second: Upgraded Magic Tower (1)_10
+  - first:
+      213: 2380736880943124208
+    second: Upgraded Magic Tower (1)_11
+  - first:
+      213: -8074855293581132703
+    second: Upgraded Magic Tower (1)_12
+  - first:
+      213: 7530272285508256695
+    second: Upgraded Magic Tower (1)_13
+  - first:
+      213: -1103392570462298676
+    second: Upgraded Magic Tower (1)_14
+  - first:
+      213: -3146758953563749252
+    second: Upgraded Magic Tower (1)_15
+  - first:
+      213: -3110006317699710652
+    second: Upgraded Magic Tower (1)_16
+  - first:
+      213: -3525033900594477673
+    second: Upgraded Magic Tower (1)_17
+  - first:
+      213: 3066909875989010306
+    second: Upgraded Magic Tower (1)_18
+  - first:
+      213: -8454155496651527311
+    second: Upgraded Magic Tower (1)_19
+  - first:
+      213: -7521317592488298546
+    second: Upgraded Magic Tower (1)_20
+  - first:
+      213: 774025523772652470
+    second: Upgraded Magic Tower (1)_21
+  - first:
+      213: -4372487881752887816
+    second: Upgraded Magic Tower (1)_22
+  - first:
+      213: -4992486863204633632
+    second: Upgraded Magic Tower (1)_23
+  - first:
+      213: 8897501063587352585
+    second: Upgraded Magic Tower (1)_24
+  - first:
+      213: 7802161742337978752
+    second: Upgraded Magic Tower (1)_25
+  - first:
+      213: -8362175745342278928
+    second: Upgraded Magic Tower (1)_26
+  - first:
+      213: 4400148449503345430
+    second: Upgraded Magic Tower (1)_27
+  - first:
+      213: -102739300573698219
+    second: Upgraded Magic Tower (1)_28
+  - first:
+      213: -8468773033916914944
+    second: Upgraded Magic Tower (1)_29
+  - first:
+      213: 4153755829735293636
+    second: Upgraded Magic Tower (1)_30
+  - first:
+      213: 5402297332684185178
+    second: Upgraded Magic Tower (1)_31
+  - first:
+      213: -1286031977431632404
+    second: Upgraded Magic Tower (1)_32
+  - first:
+      213: 2647077934087950099
+    second: Upgraded Magic Tower (1)_33
+  - first:
+      213: -2240141192285463706
+    second: Upgraded Magic Tower (1)_34
+  - first:
+      213: -3560834228286922901
+    second: Upgraded Magic Tower (1)_35
+  - first:
+      213: 169708686940797173
+    second: Upgraded Magic Tower (1)_36
+  - first:
+      213: 3294876690749615025
+    second: Upgraded Magic Tower (1)_37
+  - first:
+      213: 8869968922291565023
+    second: Upgraded Magic Tower (1)_38
+  - first:
+      213: 1625733868514968442
+    second: Upgraded Magic Tower (1)_39
+  - first:
+      213: -8882307790912722578
+    second: Upgraded Magic Tower (1)_40
+  - first:
+      213: -3104382135038540524
+    second: Upgraded Magic Tower (1)_41
+  - first:
+      213: -2942730126965670503
+    second: Upgraded Magic Tower (1)_42
+  - first:
+      213: 7149030655836398592
+    second: Upgraded Magic Tower (1)_43
+  - first:
+      213: -4923775367146047398
+    second: Upgraded Magic Tower (1)_44
+  - first:
+      213: -2896051063301460151
+    second: Upgraded Magic Tower (1)_45
+  - first:
+      213: 5545445623511538172
+    second: Upgraded Magic Tower (1)_46
+  - first:
+      213: 4192717738226798942
+    second: Upgraded Magic Tower (1)_47
+  - first:
+      213: 2776361604461885606
+    second: Upgraded Magic Tower (1)_48
+  - first:
+      213: -1119494571127719311
+    second: Upgraded Magic Tower (1)_49
+  - first:
+      213: 4485589480038774532
+    second: Upgraded Magic Tower (1)_50
+  - first:
+      213: -526106592160290591
+    second: Upgraded Magic Tower (1)_51
+  - first:
+      213: 8751293107085189472
+    second: Upgraded Magic Tower (1)_52
+  - first:
+      213: 9119829344199244086
+    second: Upgraded Magic Tower (1)_53
+  - first:
+      213: 6363422355553054637
+    second: Upgraded Magic Tower (1)_54
+  - first:
+      213: 2645438393345998666
+    second: Upgraded Magic Tower (1)_55
+  - first:
+      213: 7080551307848741411
+    second: Upgraded Magic Tower (1)_56
+  - first:
+      213: 1654328708950171396
+    second: Upgraded Magic Tower (1)_57
+  - first:
+      213: -6619628682652001670
+    second: Upgraded Magic Tower (1)_58
+  - first:
+      213: 4680047102102257459
+    second: Upgraded Magic Tower (1)_59
+  - first:
+      213: 4844916732497668325
+    second: Upgraded Magic Tower (1)_60
+  - first:
+      213: 74192989878169841
+    second: Upgraded Magic Tower (1)_61
+  - first:
+      213: 3755857503179605607
+    second: Upgraded Magic Tower (1)_62
+  - first:
+      213: -2409628996045798593
+    second: Upgraded Magic Tower (1)_63
+  - first:
+      213: -8215406181820214023
+    second: Upgraded Magic Tower (1)_64
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f66321058ae8b9f10800000000000000
+      internalID: 2277570890114938479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34d50b2964e2de390800000000000000
+      internalID: -7787517300010099389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecafff26ed99e3d50800000000000000
+      internalID: 6718976874506091214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 076c3e4aab547bcb0800000000000000
+      internalID: -4848329805908425104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa2a3de1e6e749610800000000000000
+      internalID: 1627064376816280239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02e8aec2b4e5bf250800000000000000
+      internalID: 5979476607233592864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_6
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30824f9f7e4e19510800000000000000
+      internalID: 1554275031401637891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_7
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe4d00c9530215a60800000000000000
+      internalID: 7660939855756580079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8ee374a57846240800000000000000
+      internalID: 4784097525986420965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_9
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7923b5fef3c38e190800000000000000
+      internalID: -7933024498316791145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5df95786b0275650800000000000000
+      internalID: 6221477378562587995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_11
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fe494c54931a0120800000000000000
+      internalID: 2380736880943124208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16cf96594e950ff80800000000000000
+      internalID: -8074855293581132703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Magic Tower (1)_13
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b340bf1fb6e08860800000000000000
+      internalID: 7530272285508256695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5f4ac17b37e7a00429cf3ea866796493
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":200.0,"y":200.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":1,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Upgraded Magic Tower (1)_0: 2277570890114938479
+      Upgraded Magic Tower (1)_1: -7787517300010099389
+      Upgraded Magic Tower (1)_10: 6221477378562587995
+      Upgraded Magic Tower (1)_11: 2380736880943124208
+      Upgraded Magic Tower (1)_12: -8074855293581132703
+      Upgraded Magic Tower (1)_13: 7530272285508256695
+      Upgraded Magic Tower (1)_2: 6718976874506091214
+      Upgraded Magic Tower (1)_3: -4848329805908425104
+      Upgraded Magic Tower (1)_4: 1627064376816280239
+      Upgraded Magic Tower (1)_5: 5979476607233592864
+      Upgraded Magic Tower (1)_6: 1554275031401637891
+      Upgraded Magic Tower (1)_7: 7660939855756580079
+      Upgraded Magic Tower (1)_8: 4784097525986420965
+      Upgraded Magic Tower (1)_9: -7933024498316791145
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

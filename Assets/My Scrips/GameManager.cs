@@ -71,6 +71,10 @@ public class GameManager : MonoBehaviour
     }
     public void Restart()
     {
+        Debug.Log("Restart button clicked!");
+
+        Time.timeScale = 1f;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -93,5 +97,14 @@ public class GameManager : MonoBehaviour
                 Debug.Log("Continues");
             }
         }
+    }
+
+    public void WinGame()
+    {
+        gameWinPanel.SetActive(true);
+
+        Time.timeScale = 0f;
+
+        Debug.Log("YOU WIN!");
     }
 }

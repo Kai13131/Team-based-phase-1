@@ -129,12 +129,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb1968cbdccfb44cb1ecae730255c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Towers
-  towerType: 2
-  range: 10
-  bulletPrefab: {fileID: 202945021396969657, guid: 88205e3eed8be204e9d31b22e90d1786, type: 3}
-  fireRate: 2
-  bulletDamage: 35
   cost: 220
+  towerType: 2
+  bulletPrefab: {fileID: 202945021396969657, guid: 88205e3eed8be204e9d31b22e90d1786, type: 3}
+  attackSpeed: 1
+  range: 10
+  bulletDamage: 35
+  upgradeLevel: 1
+  maxUpgradeLevel: 2
+  upgradeCost: 50
+  level1Sprite: {fileID: 6704580251450621965, guid: 8ac393416bb10364b82afbcda4ce5678, type: 3}
+  level2Sprite: {fileID: 1554275031401637891, guid: 9ad117889e3e86e4dbf4872e715d2b35, type: 3}
 --- !u!61 &9114530132481012775
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -173,7 +178,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4, y: 1.82}
+    oldSize: {x: 1.92, y: 1.92}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

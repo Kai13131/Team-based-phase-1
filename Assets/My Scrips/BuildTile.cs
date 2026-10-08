@@ -4,7 +4,6 @@ public class BuildTile : MonoBehaviour
 {
     public bool occupied = false;
     private GameObject currentTower;
-    private BuildTile buildTile;
 
     private void OnMouseDown()
     {
@@ -37,39 +36,16 @@ public class BuildTile : MonoBehaviour
 
         Debug.Log("Tower assigned to tile!");
     }
-    public void DeleteTower()
+
+    public GameObject GetTower()
     {
-        if (currentTower == null)
-        {
-            Debug.LogWarning("There is no tower assigned to this tile!");
-            return;
-        }
-
-        Destroy(currentTower);
+        return currentTower;
+    }
+    public void RemoveTower()
+    {
         currentTower = null;
-
         occupied = false;
 
-        GameManager.Instance.AddMoney(50);
-
-        Debug.Log("Tower deleted! Refunded 50 money.");
-    }
-
-
-    private void OnMouseOver()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            Debug.Log("Right-click detected on Build Tile");
-
-            if (occupied)
-            {
-                DeleteTower();
-            }
-            else
-            {
-                Debug.Log("There is no tower on this tile.");
-            }
-        }
+        Debug.Log("Build tile is now empty!");
     }
 }

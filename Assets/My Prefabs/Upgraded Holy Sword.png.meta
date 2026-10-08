@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: bd9c845964c893f4cb3b53a432eed8c4
+guid: 84da746020d961c4ea9eac837d1c1f17
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -222087461200727013
-    second: Holy Tower1 fixed_0
+      213: -3344648618351998760
+    second: Upgraded Holy Sword_0
+  - first:
+      213: 7521969678809300446
+    second: Upgraded Holy Sword_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,12 +118,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ice Tower
+      name: Upgraded Holy Sword_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 0
-        width: 154
+        x: 0
+        y: 180
+        width: 180
         height: 180
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -130,8 +133,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b14ff0671acfaecf0800000000000000
-      internalID: -222087461200727013
+      spriteID: 8d8c0a46dcb6591d0800000000000000
+      internalID: -3344648618351998760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Holy Sword_1
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 180
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eddffacd197636860800000000000000
+      internalID: 7521969678809300446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Holy Sword_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67d58405e23894e4382270eec58d1118
+      internalID: -1350708949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Upgraded Holy Sword_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 0
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4c885f7d3d9fe4ba6e7845a24a58ca
+      internalID: 153981164
       vertices: []
       indices: 
       edges: []
@@ -140,7 +209,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ddb680a59fff6174cb9bff2aaaaf994a
+    spriteID: ed899bbd5875d804a83c2e72f33a01e7
     internalID: 0
     vertices: []
     indices: 
@@ -148,9 +217,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":180.0,"y":180.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":1,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Ice Tower: -222087461200727013
+      Upgraded Holy Sword_0: -3344648618351998760
+      Upgraded Holy Sword_1: 7521969678809300446
+      Upgraded Holy Sword_2: -1350708949
+      Upgraded Holy Sword_3: 153981164
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

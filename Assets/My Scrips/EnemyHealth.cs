@@ -23,9 +23,23 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
+        Debug.Log("Die() called. Tag is: " + gameObject.tag);
+
+        if (gameObject.CompareTag("Boss"))
+        {
+            Debug.Log("BOSS DIED!");
+
+            GameManager.Instance.WinGame();
+
+            return;
+        }
+
         Debug.Log("Enemy died.");
-        GameManager.Instance.AddMoney(10); // Add money to the player's total when the enemy dies
-        Destroy(gameObject); // Destroy the enemy game object
+
+        GameManager.Instance.AddMoney(10);
+
+        Destroy(gameObject);
+
     }
 
 }
