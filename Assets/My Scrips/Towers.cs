@@ -28,15 +28,16 @@ public class Towers : MonoBehaviour
 
     private BuildTile buildTile;
 
-    public Sprite level2Sprite;
+    //For some reason, the sprite change doesn't work
+    //public Sprite level2Sprite;
 
-    private SpriteRenderer spriteRenderer;
+    //private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
 
-        UpdateSprite();
+        //UpdateSprite();
     }
     // Connect this tower to its BuildTile
     public void SetBuildTile(BuildTile tile)
@@ -69,7 +70,7 @@ public class Towers : MonoBehaviour
         bulletDamage += 5;
         attackSpeed += 0.1f;
         range += 0.5f;
-        UpdateSprite();
+        //UpdateSprite();
         Debug.Log(
             "Tower upgraded! " +
             "Level: " + upgradeLevel +
@@ -178,17 +179,17 @@ public class Towers : MonoBehaviour
         bulletDamage = damage;
     }
 
-    private void UpdateSprite()
-    {
-        if (spriteRenderer == null)
-        {
-            Debug.LogWarning("No SpriteRenderer found on tower!");
-            return;
-        }
-
-        if (upgradeLevel == 2)
-        {
-            spriteRenderer.sprite = level2Sprite;
-        }
-    }
+    //private void UpdateSprite()
+    //{
+    //    if (spriteRenderer == null)
+    //    {
+    //        Debug.LogWarning("No SpriteRenderer found on tower!");
+    //        return;
+    //    }
+    //
+    //    if (upgradeLevel == 2)
+    //    {
+    //        spriteRenderer.sprite = level2Sprite;
+    //    }
+    //}
 }
