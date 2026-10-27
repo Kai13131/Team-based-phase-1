@@ -55,7 +55,7 @@ public class BuildManager : MonoBehaviour
             buildTiles.SetActive(true);
         }
     }
-    
+
     public bool BuildTower(Vector3 position, BuildTile tile)
     {
         if (selectedTower == null)
@@ -72,27 +72,34 @@ public class BuildManager : MonoBehaviour
             return false;
         }
 
-        if (GameManager.Instance.SpendMoney(towerData.cost))
+        // Check if the tower exceeds available efficiency.
+        if (GameManager.Instance.currentEfficiency + towerData.efficiencyCost >
+            GameManager.Instance.maxEfficiency)
         {
-            GameObject newTower = Instantiate(selectedTower, position, Quaternion.identity);
-
-            tile.SetTower(newTower);
-
-            Towers newTowerScript = newTower.GetComponent<Towers>();
-
-            if (newTowerScript != null)
-            {
-                newTowerScript.SetBuildTile(tile);
-            }
-
-            buildTiles.SetActive(false);
-            Debug.Log("Tower built");
-            return true;
-        }
-        else
-        {
-            Debug.Log("Not enough money!");
+            Debug.Log("Not enough efficiency!");
             return false;
         }
+
+        // Spawn the selected tower.
+        GameObject newTower = Instantiate(selectedTower,position,Quaternion.identity);
+
+        // Get the existing Towers component.
+        Towers newTowerScript = newTower.GetComponent<Towers>();
+
+        // Register efficiency before placing the tower.
+        if (newTowerScript == null || !newTowerScript.RegisterEfficiency())
+        {
+            Destroy(newTower);
+            return false;
+        }
+
+        // Assign tower to its build tile.
+        tile.SetTower(newTower);
+        newTowerScript.SetBuildTile(tile);
+
+        buildTiles.SetActive(false);
+
+        Debug.Log("Tower built!");
+        return true;
     }
 }

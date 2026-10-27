@@ -6,10 +6,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    public int money = 100;
+    //public int money = 100;
     public int baseHealth = 10;
     public int currentWave = 0;
     public float score;
+
+    [Header("Tower Efficiency")]
+    public int maxEfficiency = 10;
+
+    public int currentEfficiency = 0;
 
     public GameObject gameOverPanel;
     public GameObject gamePausePanel;
@@ -38,23 +43,40 @@ public class GameManager : MonoBehaviour
         Pause();
     }
 
-    public void AddMoney(int mount)
+    public bool SpendEfficiency(int amount)
     {
-        money += mount;
+        // Check if the tower would exceed capacity.
+        if (amount < 0 || currentEfficiency + amount > maxEfficiency)
+            return false;
+
+        currentEfficiency += amount;
+        return true;
     }
 
-    public bool SpendMoney(int amount)
+    public void RefundEfficiency(int amount)
     {
-        if (money >= amount)
-        {
-            money -= amount;
-            return true; // Purchase successful
-        }
-        else
-        {
-            return false; // Not enough money
-        }
+        // Return efficiency when a tower is removed.
+        currentEfficiency = Mathf.Max(0, currentEfficiency - Mathf.Max(0, amount));
+
     }
+
+    //public void AddMoney(int mount)
+    //{
+    //    money += mount;
+    //}
+
+    //public bool SpendMoney(int amount)
+    //{
+    //    if (money >= amount)
+    //    {
+    //        money -= amount;
+    //        return true; // Purchase successful
+    //    }
+    //    else
+    //    {
+    //        return false; // Not enough money
+    //    }
+    //}
 
     public void GetCurrentWave(int wave)
     {

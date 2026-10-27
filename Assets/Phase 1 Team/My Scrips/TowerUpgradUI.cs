@@ -63,10 +63,10 @@ public class TowerUpgradeUI : MonoBehaviour
             return;
         }
 
-        int refundAmount = selectedTower.cost;
+        int refundAmount = selectedTower.efficiencyCost;
 
         // Give money back
-        GameManager.Instance.AddMoney(refundAmount);
+        //GameManager.Instance.AddMoney(refundAmount);
 
         // Remove tower from the tile
         tile.RemoveTower();

@@ -37,7 +37,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5446653588516233140
 SpriteRenderer:
-  serializedVersion: 3
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
-  m_BlendShapeWeights: []
 --- !u!95 &1401998050431153949
 Animator:
   serializedVersion: 7
@@ -129,7 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb1968cbdccfb44cb1ecae730255c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Towers
-  cost: 220
+  efficiencyCost: 1
+  upgradeEfficiencyCost: 1
   towerType: 2
   bulletPrefab: {fileID: 202945021396969657, guid: 88205e3eed8be204e9d31b22e90d1786, type: 3}
   attackSpeed: 1
@@ -138,8 +138,6 @@ MonoBehaviour:
   upgradeLevel: 1
   maxUpgradeLevel: 2
   upgradeCost: 50
-  level1Sprite: {fileID: 6704580251450621965, guid: 8ac393416bb10364b82afbcda4ce5678, type: 3}
-  level2Sprite: {fileID: 1554275031401637891, guid: 9ad117889e3e86e4dbf4872e715d2b35, type: 3}
 --- !u!61 &9114530132481012775
 BoxCollider2D:
   m_ObjectHideFlags: 0

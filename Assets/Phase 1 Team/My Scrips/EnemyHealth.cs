@@ -36,7 +36,7 @@ public class EnemyHealth : MonoBehaviour
 
         Debug.Log("Enemy died.");
 
-        GameManager.Instance.AddMoney(10);
+        //GameManager.Instance.AddMoney(10);
 
         Destroy(gameObject);
 

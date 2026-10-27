@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2187154349368184900}
   - component: {fileID: -7384301716867366989}
   - component: {fileID: 8382762233250844328}
+  - component: {fileID: -7948747239292731165}
   m_Layer: 0
   m_Name: Demon
   m_TagString: Enemy
@@ -102,7 +103,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19945890989971480}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c3b6c82845bf3a48bffd33689892ae9, type: 3}
   m_Name: 
@@ -128,8 +129,6 @@ MonoBehaviour:
   pathNumber: 1
   normalSpeed: 0.75
   slowedSpeed: 0.5
-  barricadeDamage: 1
-  attackInterval: 1
 --- !u!61 &-2187154349368184900
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -216,3 +215,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7948747239292731165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19945890989971480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f44d7aa6a784c94fbb000388bada79d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovementV2
+  currentState: 0
+  waypoints: []
+  waypoints_1: []
+  waypoints_2: []
+  pathNumber: 0
+  normalSpeed: 2
+  slowedSpeed: 1
+  barricadeDamage: 1
+  attackInterval: 1

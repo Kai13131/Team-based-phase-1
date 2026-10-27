@@ -10,7 +10,13 @@ public class Towers : MonoBehaviour
     }
 
     // Cost of the tower
-    public int cost = 50;
+    public int efficiencyCost = 1;
+    public int upgradeEfficiencyCost = 1;
+    
+
+    // Tracks effienciency consumed by the tower.
+
+    private int totalEfficiencyUsed = 0;
 
     public TowerType towerType;
     //Tower Prefab
@@ -48,6 +54,36 @@ public class Towers : MonoBehaviour
     {
         return buildTile;
     }
+    public bool RegisterEfficiency()
+    {
+        // Prevent double registration.
+        if (totalEfficiencyUsed > 0)
+            return false;
+
+        // Reserve efficiency when building.
+        if (!GameManager.Instance.SpendEfficiency(efficiencyCost))
+        {
+            Debug.Log("Not enough efficiency to build!");
+            return false;
+        }
+
+        totalEfficiencyUsed = efficiencyCost;
+        return true;
+    }
+
+    public void ReleaseEfficiency()
+    {
+        // Return all efficiency used by this tower.
+        if (totalEfficiencyUsed <= 0)
+            return;
+
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.RefundEfficiency(totalEfficiencyUsed);
+        }
+
+        totalEfficiencyUsed = 0;
+        }
     public void Upgrade()
     {
         if (upgradeLevel >= maxUpgradeLevel)
@@ -56,12 +92,22 @@ public class Towers : MonoBehaviour
             return;
         }
 
-        // Check if player has enough money
-        if (!GameManager.Instance.SpendMoney(upgradeCost))
+        //// Check if player has enough money
+        //if (!GameManager.Instance.SpendMoney(upgradeCost))
+        //{
+        //    Debug.Log("Not enough money to upgrade!");
+        //    return;
+        //}
+
+        // Check if player has enough efficiency to upgrade.
+        if (!GameManager.Instance.SpendEfficiency(upgradeEfficiencyCost))
         {
-            Debug.Log("Not enough money to upgrade!");
+            Debug.Log("Not enough efficiency to upgrade!");
             return;
         }
+
+        // Track the additional efficiency consumed.
+        totalEfficiencyUsed += upgradeEfficiencyCost;
 
         // Increase level
         upgradeLevel++;
@@ -177,6 +223,15 @@ public class Towers : MonoBehaviour
     public void SetBulletDamage(int damage)
     {
         bulletDamage = damage;
+    }
+
+    private void OnDestroy()
+    {
+        // Return efficiency when this tower is destroyed.
+        if (GameManager.Instance != null)
+        {
+            ReleaseEfficiency();
+        }
     }
 
     //private void UpdateSprite()

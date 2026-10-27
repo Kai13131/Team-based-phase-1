@@ -14,7 +14,10 @@ public class GameUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moneyText.text = "$: " + GameManager.Instance.money; // Update the money text in the UI to reflect the current amount of money
+
+        moneyText.text = "Efficiency: " + GameManager.Instance.currentEfficiency + " / " + GameManager.Instance.maxEfficiency;
+
+        //moneyText.text = "$: " + GameManager.Instance.money; // Update the money text in the UI to reflect the current amount of money
         waveText.text = GameManager.Instance.currentWave.ToString();
     }
 }
