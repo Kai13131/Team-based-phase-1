@@ -197,7 +197,8 @@ public class EnemyMovementV2 : MonoBehaviour
             }
         }
         else if (pathNumber == 2)
-        {
+        {   
+            Debug.Log(gameObject.name + " Walking to " + waypoints_2[currentWaypointIndex]);
             Transform target = waypoints_2[currentWaypointIndex];
 
             transform.position = Vector3.MoveTowards(
