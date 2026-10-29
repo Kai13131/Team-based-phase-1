@@ -31,14 +31,17 @@ public class EnemyMovementV2 : MonoBehaviour
 
     // Version 2 Update: Introducing Barricades, Players will be allowed to implement a barricade on a select location of the map.
 
-    [Header("Barricade Attack")]
-    public int barricadeDamage = 1;
+    [Header("Barricade + Base Attack")]
+    public int collisionDamage = 1;
     public float attackInterval = 1f;
 
     private float attackTimer;
     private Barricade targetBarricade;
+    private BaseHealthV2 targetBase;
 
     private SpriteRenderer sR;
+
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,9 +53,9 @@ public class EnemyMovementV2 : MonoBehaviour
 
         sR = GetComponent<SpriteRenderer>();
 
-        GameObject waypointParent = GameObject.Find("Way_Point_Manager");
-        GameObject waypointParent_1 = GameObject.Find("Way_Point_Manager_1");
-        GameObject waypointParent_2 = GameObject.Find("Way_Point_Manager_2");
+        GameObject waypointParent = GameObject.Find("WaypointManager");
+        GameObject waypointParent_1 = GameObject.Find("WaypointManager2");
+        GameObject waypointParent_2 = GameObject.Find("WaypointManager3");
 
         // Initialize the waypoints array based on the number of child objects
         waypoints = new Transform[waypointParent.transform.childCount];
@@ -125,15 +128,14 @@ public class EnemyMovementV2 : MonoBehaviour
             ResumeMovement();
             return;
         }
-
-
+        
         // Enemies should have a slight buffer after hitting wall.
 
         attackTimer -= Time.deltaTime;
 
         if (attackTimer <= 0f)
         {
-            targetBarricade.TakeDamage(barricadeDamage);
+            targetBarricade.TakeDamage(collisionDamage);
             attackTimer = attackInterval;
         }
 
@@ -149,16 +151,33 @@ public class EnemyMovementV2 : MonoBehaviour
 
     }
 
+    private void AttackBase()
+    {
+
+        if (targetBase == null)
+        {
+            GameManager.Instance.BaseDestroyed();
+            return;
+        }
+
+        attackTimer -= Time.deltaTime;
+
+        if (attackTimer <= 0f)
+        {
+            targetBarricade.TakeDamage(collisionDamage);
+            attackTimer = attackInterval;
+        }
+        
+
+    }
+    
     void Move()
     {
 
         if (currentWaypointIndex >= waypoints.Length)
         {
-            // Destroy the enemy when it reaches the end of the waypoints
-            Destroy(gameObject);
-            // Decrease the base health when an enemy reaches the end of the waypoints
-            GameManager.Instance.baseHealth--;
-            Debug.Log("Enemy reached the base! Base health: " + GameManager.Instance.baseHealth);
+            
+            // Debug.Log("Enemy reached the base! Base health: " + GameManager.Instance.baseHealth);
 
             return; // No more waypoints to follow    
         }
