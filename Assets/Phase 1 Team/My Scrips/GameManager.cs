@@ -20,6 +20,13 @@ public class GameManager : MonoBehaviour
     public GameObject gamePausePanel;
     public GameObject gameWinPanel;
 
+    [Header("Fast Forward Time Scale")]
+    [SerializeField] private float fastForward = 4f;
+
+    private bool isPaused = false;
+    private bool isFastForwarding = false;
+    private float defaultFixedDeltaTime;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,12 +42,39 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        defaultFixedDeltaTime = Time.fixedDeltaTime;
     }
     // Update is called once per frame
     void Update()
     {
-        BaseDestroyed(); // Check if the base has been destroyed and handle game over logic if necessary
+        BaseDestroyed();
         Pause();
+        FastForward();
+        ApplyTimeScale();
+    }
+
+    private void ApplyTimeScale()
+    {
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+        }
+        else if (BuildManager.Instance != null &&
+                 BuildManager.Instance.IsCurrentlyBuilding)
+        {
+            Time.timeScale = 0.5f;
+        }
+        else if (isFastForwarding)
+        {
+            Time.timeScale = fastForward;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+
+        Time.fixedDeltaTime = defaultFixedDeltaTime * Time.timeScale;
     }
 
     public bool SpendEfficiency(int amount)
@@ -102,30 +136,47 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (!Input.GetKeyDown(KeyCode.Escape))
+            return;
+
+        isPaused = !isPaused;
+
+        if (isPaused)
         {
-            if (Time.timeScale == 1f)
-            {
-                // Pause
-                Time.timeScale = 0f;
-                gamePausePanel.SetActive(true);
-                Debug.Log("Pause");
-            }
-            else
-            {
-                // Continue
-                Time.timeScale = 1f;
-                gamePausePanel.SetActive(false);
-                Debug.Log("Continues");
-            }
+            Time.timeScale = 0f;
+            gamePausePanel.SetActive(true);
+            Debug.Log("Pause");
         }
+        else
+        {
+            Time.timeScale = isFastForwarding ? fastForward : 1f;
+            gamePausePanel.SetActive(false);
+            Debug.Log("Continues");
+        }
+    }
+
+    public void FastForward()
+    {
+        if (!Input.GetKeyDown(KeyCode.F) || isPaused)
+            return;
+
+        isFastForwarding = !isFastForwarding;
+        Time.timeScale = isFastForwarding ? fastForward : 1f;
+        Time.fixedDeltaTime = defaultFixedDeltaTime * Time.timeScale;
+
+        Debug.Log(isFastForwarding ? "Fast Forward" : "Normal Speed");
     }
 
     public void WinGame()
     {
+        //isGameEnded = true;
+        isFastForwarding = false;
+        isPaused = false;
+
         gameWinPanel.SetActive(true);
 
         Time.timeScale = 0f;
+        Time.fixedDeltaTime = defaultFixedDeltaTime;
 
         Debug.Log("YOU WIN!");
     }

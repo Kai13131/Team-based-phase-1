@@ -12,6 +12,10 @@ public class BuildManager : MonoBehaviour
 
     public GameObject buildTiles;
 
+    [Header("Building Time Scale")]
+    [SerializeField] private float buildTimeScale = 0.5f;
+    private bool isCurrentlyBuilding = false;   
+
     void Awake()
     {
         Instance = this;
@@ -29,6 +33,7 @@ public class BuildManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            isCurrentlyBuilding = !isCurrentlyBuilding;
             selectedTower = null;
             buildTiles.SetActive(false);
             Debug.Log("Deselected Tower");
@@ -36,6 +41,7 @@ public class BuildManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            isCurrentlyBuilding = true;
             selectedTower = HolyTowerPrefab;
             Debug.Log("Selected Standard Tower");
             buildTiles.SetActive(true);
@@ -43,13 +49,15 @@ public class BuildManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
+            isCurrentlyBuilding = true;
             selectedTower = IceTowerPrefab;
             Debug.Log("Selected Slow Tower");
             buildTiles.SetActive(true);
-
         }
+
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
+            isCurrentlyBuilding = true;
             selectedTower = MagicTowerPrefab;
             Debug.Log("Selected Advanced Tower");
             buildTiles.SetActive(true);
@@ -100,6 +108,9 @@ public class BuildManager : MonoBehaviour
         buildTiles.SetActive(false);
 
         Debug.Log("Tower built!");
+        isCurrentlyBuilding = false;
         return true;
     }
+
+    public bool IsCurrentlyBuilding => isCurrentlyBuilding;
 }
