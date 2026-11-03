@@ -37,12 +37,7 @@ public class Bullet : MonoBehaviour
             return;
         }
         //The bullet move towards to the enemy
-        transform.position = Vector2.MoveTowards(
-            transform.position,
-            target.position,
-            speed * Time.deltaTime
-            );
-
+        transform.position = Vector2.MoveTowards(transform.position,target.position, speed * Time.deltaTime);
 
         //calculate the distance if bullete close enough to nemey
         if (Vector2.Distance(transform.position, target.position) < 0.1f)

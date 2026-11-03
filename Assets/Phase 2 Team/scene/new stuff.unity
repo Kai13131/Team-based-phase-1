@@ -8756,6 +8756,14 @@ MonoBehaviour:
       pathNumber: 2
   - groups: []
   - groups: []
+  - groups:
+    - enemyPrefab: {fileID: 3218364987091740020, guid: 6d8c2a3d36f115d49ae90ad1b0425e7f, type: 3}
+      count: 10
+      pathNumber: 1
+  - groups:
+    - enemyPrefab: {fileID: 1391945359900165791, guid: a797a83d91d6a404abade4d636daf734, type: 3}
+      count: 2
+      pathNumber: 2
   spawnPositions:
   - {fileID: 2088693866}
   - {fileID: 615268151}

@@ -3,6 +3,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))] // Ensuring we can't start the game without attaching Rigidbody to applied character.
 public class PlayerMovement : MonoBehaviour
 {
+    
+    // Sleepy Salmons's message.
+    // We had an idea of having the Player be the one to spawn towers and move around build the towers or destroy them. We focused more on the refactoring and attempting to clean other scripts over last few weeks. More information in the document.*
+
+
     [Header("Movement")]
 
     public float moveSpeed = 6f;

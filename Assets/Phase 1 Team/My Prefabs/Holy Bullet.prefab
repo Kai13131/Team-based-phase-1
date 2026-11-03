@@ -109,6 +109,9 @@ MonoBehaviour:
   speed: 8
   damage: 1
   appliesSlow: 0
+  appliesChainLightning: 0
+  maxBounces: 6
+  chainRadius: 3
 --- !u!61 &111937336376583218
 BoxCollider2D:
   m_ObjectHideFlags: 0

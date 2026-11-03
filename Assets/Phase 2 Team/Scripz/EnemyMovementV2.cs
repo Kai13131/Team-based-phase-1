@@ -108,7 +108,6 @@ public class EnemyMovementV2 : MonoBehaviour
                 Move();
                 break;
 
-
             case EnemyState.AttackingBarricade: // *V2 Edition
                 AttackBarricade();                
                 break;
@@ -175,12 +174,9 @@ public class EnemyMovementV2 : MonoBehaviour
     
     void Move()
     {
-
         if (currentWaypointIndex >= waypoints.Length)
         {
-            
             // Debug.Log("Enemy reached the base! Base health: " + GameManager.Instance.baseHealth);
-
             return; // No more waypoints to follow    
         }
 
@@ -189,11 +185,7 @@ public class EnemyMovementV2 : MonoBehaviour
         {
             Transform target = waypoints[currentWaypointIndex];
 
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                target.position,
-                currentSpeed * Time.deltaTime
-                ); // Move towards the target waypoint
+            transform.position = Vector3.MoveTowards(transform.position,target.position,currentSpeed * Time.deltaTime); // Move towards the target waypoint
 
             if (Vector2.Distance(transform.position, target.position) < 0.1f)
             {
@@ -205,11 +197,7 @@ public class EnemyMovementV2 : MonoBehaviour
         {
             Transform target = waypoints_1[currentWaypointIndex];
 
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                target.position,
-                currentSpeed * Time.deltaTime
-                ); // Move towards the target waypoint
+            transform.position = Vector3.MoveTowards(transform.position,target.position,currentSpeed * Time.deltaTime); // Move towards the target waypoint
 
             if (Vector2.Distance(transform.position, target.position) < 0.1f)
             {
@@ -222,11 +210,7 @@ public class EnemyMovementV2 : MonoBehaviour
             Debug.Log(gameObject.name + " Walking to " + waypoints_2[currentWaypointIndex]);
             Transform target = waypoints_2[currentWaypointIndex];
 
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                target.position,
-                currentSpeed * Time.deltaTime
-                ); // Move towards the target waypoint
+            transform.position = Vector3.MoveTowards(transform.position,target.position,currentSpeed * Time.deltaTime); // Move towards the target waypoint
 
             if (Vector2.Distance(transform.position, target.position) < 0.1f)
             {
