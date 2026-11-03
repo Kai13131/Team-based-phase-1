@@ -209,6 +209,7 @@ public class Towers : MonoBehaviour
         {
             case TowerType.Normal:
                 SetBulletDamage(bulletDamage);
+                bulletScript.appliesChainLightning = true; // V2* Edition
                 break;
             case TowerType.Slow:
                 SetBulletDamage(bulletDamage);

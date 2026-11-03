@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -7,6 +8,19 @@ public class Bullet : MonoBehaviour
     public int damage = 1;
 
     public bool appliesSlow = false;
+
+    // V2 Edition:
+
+    [Header("Chain Lightning")]
+    public bool appliesChainLightning = false;
+
+    public int maxBounces = 3;
+
+    public float chainRadius = 3f;
+
+    private int currentBounces = 0;
+
+    private readonly System.Collections.Generic.List<Transform> hitTargets = new(); // Essential to create a new list of enemies in order for it not to break easy.
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,9 +58,68 @@ public class Bullet : MonoBehaviour
                     }
                 }
             }
-            target.GetComponent<EnemyHealth>().TakeDamage(damage);
+
+            EnemyHealth enemyHealth = target.GetComponent<EnemyHealth>();
+
+            // Chain Lightning Damage
+
+            if (enemyHealth != null)
+            {
+                enemyHealth.TakeDamage(damage);
+            }
+
+            // Grabs from initialized private new list and places struck enemies on that list.
+
+            hitTargets.Add(target);
+
+            // Bounce back to another enemy.
+
+            if (appliesChainLightning && currentBounces < maxBounces)
+            {
+                Transform nextTarget = FindNextTarget();
+
+                if (nextTarget != null)
+                {
+                    target = nextTarget;
+                    currentBounces++;
+                    return;
+                }
+            }
+           
             Destroy(gameObject);
         }
     }
 
+    private Transform FindNextTarget()
+    {
+        {
+            // Using colliders to have enemies be targeted in a Chain Radius
+
+            Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position,chainRadius);
+
+            Transform nearestTarget = null;
+            float shortestDistance = Mathf.Infinity;
+
+            foreach (Collider2D enemy in nearbyEnemies)
+            {
+                // Only target enemies with health.
+                if (enemy.GetComponent<EnemyHealth>() == null)
+                    continue;
+
+                // Prevent hitting the same enemy twice.
+                if (hitTargets.Contains(enemy.transform))
+                    continue;
+
+                float distance = Vector2.Distance(transform.position,enemy.transform.position);
+
+                if (distance < shortestDistance)
+                {
+                    shortestDistance = distance;
+                    nearestTarget = enemy.transform;
+                }
+            }
+
+            return nearestTarget;
+        }
+    }
 }

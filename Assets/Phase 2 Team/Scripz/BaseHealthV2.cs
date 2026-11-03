@@ -23,7 +23,7 @@ public class BaseHealthV2 : MonoBehaviour
 
         Debug.Log("Base HP: " + currentHealth);
 
-        if (currentHealth < 0)
+        if (currentHealth <= 0)
         {
             DestroyBase();
         }
@@ -33,6 +33,9 @@ public class BaseHealthV2 : MonoBehaviour
     private void DestroyBase()
     {
         // Destroy base when enemys reduce hp to 0.
+
+        GameManager.Instance.baseHealth = 0;
+        GameManager.Instance.BaseDestroyed();
 
         Destroy(gameObject);
     }

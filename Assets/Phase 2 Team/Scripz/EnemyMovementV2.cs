@@ -7,7 +7,8 @@ public class EnemyMovementV2 : MonoBehaviour
     {
         Moving,
         Slowed,
-        Attacking,
+        AttackingBarricade,
+        AttackingBase,
         Dead
     }
     public EnemyState currentState;
@@ -108,8 +109,12 @@ public class EnemyMovementV2 : MonoBehaviour
                 break;
 
 
-            case EnemyState.Attacking: // *V2 Edition
+            case EnemyState.AttackingBarricade: // *V2 Edition
                 AttackBarricade();                
+                break;
+
+            case EnemyState.AttackingBase:
+                AttackBase();
                 break;
 
 
@@ -155,19 +160,16 @@ public class EnemyMovementV2 : MonoBehaviour
     {
 
         if (targetBase == null)
-        {
-            GameManager.Instance.BaseDestroyed();
+        
             return;
-        }
 
         attackTimer -= Time.deltaTime;
 
         if (attackTimer <= 0f)
         {
-            targetBarricade.TakeDamage(collisionDamage);
+            targetBase.TakeDamage(collisionDamage);
             attackTimer = attackInterval;
         }
-        
 
     }
     
@@ -261,20 +263,41 @@ public class EnemyMovementV2 : MonoBehaviour
         currentSpeed = normalSpeed; // Restore the enemy's speed to normal
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Detect a barricade.
-        Barricade barricade = other.GetComponent<Barricade>();
-
-        if (barricade == null || currentState == EnemyState.Dead)
+        if (currentState == EnemyState.Dead)
             return;
 
-        if (targetBarricade != null)
+        // Collision for Barricade
+
+        Barricade barricade = other.GetComponent<Barricade>(); 
+
+        if (barricade != null)
+        {
+            if (targetBarricade != null || targetBase != null)
+                return;
+
+            targetBarricade = barricade;
+            attackTimer = attackInterval;
+
+            currentState = EnemyState.AttackingBarricade; 
             return;
+        }
 
-        targetBarricade = barricade;
-        attackTimer = attackInterval;
+        // Collision for Base
 
-        currentState = EnemyState.Attacking;
+        BaseHealthV2 baseHealth = other.GetComponent<BaseHealthV2>();
+
+        if (baseHealth != null)
+        {
+            Debug.Log("Enemy detected Base: " + other.name);
+
+            targetBase = baseHealth;
+            attackTimer = attackInterval;
+
+            currentState = EnemyState.AttackingBase; 
+        }
     }
+
 }
