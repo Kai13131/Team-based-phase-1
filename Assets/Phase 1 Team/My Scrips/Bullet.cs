@@ -39,7 +39,7 @@ public class Bullet : MonoBehaviour
         //The bullet move towards to the enemy
         transform.position = Vector2.MoveTowards(transform.position,target.position, speed * Time.deltaTime);
 
-        //calculate the distance if bullete close enough to nemey
+        //calculate the distance if bullets close enough to enemy
         if (Vector2.Distance(transform.position, target.position) < 0.1f)
         {
             if (target != null)
@@ -54,21 +54,18 @@ public class Bullet : MonoBehaviour
                 }
             }
 
+            //Grabs enemy health script and applies damage to it.
             EnemyHealth enemyHealth = target.GetComponent<EnemyHealth>();
-
-            // Chain Lightning Damage
 
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(damage);
             }
 
-            // Grabs from initialized private new list and places struck enemies on that list.
-
+            // Adds the target to the list of hit targets to prevent hitting the same enemy twice.
             hitTargets.Add(target);
 
-            // Bounce back to another enemy.
-
+            // If this bullet is a chain lightning bullet and it hasn't reached the max bounces, find the next target.
             if (appliesChainLightning && currentBounces < maxBounces)
             {
                 Transform nextTarget = FindNextTarget();
@@ -87,34 +84,38 @@ public class Bullet : MonoBehaviour
 
     private Transform FindNextTarget()
     {
+        // Using colliders to have enemies be targeted in a Chain Radius
+
+        Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position,chainRadius);
+
+        Transform nearestTarget = null;
+        float shortestDistance = Mathf.Infinity;
+
+        foreach (Collider2D enemy in nearbyEnemies)
         {
-            // Using colliders to have enemies be targeted in a Chain Radius
+            // Only target enemies with health.
+            if (enemy.GetComponent<EnemyHealth>() == null)
+                continue;
 
-            Collider2D[] nearbyEnemies = Physics2D.OverlapCircleAll(transform.position,chainRadius);
+            // Prevent hitting the same enemy twice.
+            if (hitTargets.Contains(enemy.transform))
+                continue;
 
-            Transform nearestTarget = null;
-            float shortestDistance = Mathf.Infinity;
+            float distance = Vector2.Distance(transform.position,enemy.transform.position);
 
-            foreach (Collider2D enemy in nearbyEnemies)
+            if (distance < shortestDistance)
             {
-                // Only target enemies with health.
-                if (enemy.GetComponent<EnemyHealth>() == null)
-                    continue;
-
-                // Prevent hitting the same enemy twice.
-                if (hitTargets.Contains(enemy.transform))
-                    continue;
-
-                float distance = Vector2.Distance(transform.position,enemy.transform.position);
-
-                if (distance < shortestDistance)
-                {
-                    shortestDistance = distance;
-                    nearestTarget = enemy.transform;
-                }
+                shortestDistance = distance;
+                nearestTarget = enemy.transform;
             }
-
-            return nearestTarget;
         }
+
+        return nearestTarget;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, chainRadius);
     }
 }
