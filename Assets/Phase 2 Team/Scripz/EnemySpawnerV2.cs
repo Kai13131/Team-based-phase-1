@@ -215,6 +215,11 @@ public class EnemySpawnerV2 : MonoBehaviour
         CurrentState = WaveState.Completed;
         completedTimer = completedMessageTime;
 
+        // Reward the player efficiency for completing a wave.
+
+        if (GameManager.Instance != null)
+            GameManager.Instance.WaveCompleted();
+
         Debug.Log("Wave " + (waveIndex + 1) + " Complete!");
     }
 
@@ -225,6 +230,10 @@ public class EnemySpawnerV2 : MonoBehaviour
         if (waveIndex >= waves.Length)
         {
             CurrentState = WaveState.Finished;
+
+            // Win after all waves are completed
+
+            GameManager.Instance.WinGame();
             Debug.Log("All waves completed!");
             return;
         }

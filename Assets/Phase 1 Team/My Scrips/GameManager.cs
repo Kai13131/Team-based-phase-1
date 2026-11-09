@@ -16,6 +16,14 @@ public class GameManager : MonoBehaviour
 
     public int currentEfficiency = 0;
 
+    // Check Efficiency Growth
+
+    [SerializeField] private int efficiencyIncreasePerKill = 10;
+
+    private int enemiesDestroyed = 0;
+
+
+
     public GameObject gameOverPanel;
     public GameObject gamePausePanel;
     public GameObject gameWinPanel;
@@ -24,6 +32,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float fastForward = 4f;
 
     private bool isPaused = false;
+    private bool isGameEnded = false;
     private bool isFastForwarding = false;
     private float defaultFixedDeltaTime;
 
@@ -56,7 +65,7 @@ public class GameManager : MonoBehaviour
 
     private void ApplyTimeScale()
     {
-        if (isPaused)
+        if (isGameEnded || isPaused)
         {
             Time.timeScale = 0f;
         }
@@ -119,23 +128,21 @@ public class GameManager : MonoBehaviour
 
     public void BaseDestroyed()
     {
-        if (baseHealth <= 0)
+        if (baseHealth <= 0 && !isGameEnded)
         {
-            Debug.Log("Game Over!");
+            isGameEnded = true;
+            isFastForwarding = false;
+
             gameOverPanel.SetActive(true);
+
+            Debug.Log("Game Over!");           
         }
     }
-    public void Restart()
-    {
-        Debug.Log("Restart button clicked!");
-
-        Time.timeScale = 1f;
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
     public void Pause()
     {
+        if (isGameEnded)
+            return;
+
         if (!Input.GetKeyDown(KeyCode.Escape))
             return;
 
@@ -157,6 +164,9 @@ public class GameManager : MonoBehaviour
 
     public void FastForward()
     {
+        if (isGameEnded)
+            return;
+
         if (!Input.GetKeyDown(KeyCode.F) || isPaused)
             return;
 
@@ -167,17 +177,52 @@ public class GameManager : MonoBehaviour
         Debug.Log(isFastForwarding ? "Fast Forward" : "Normal Speed");
     }
 
+    public void EnemyDestroyed()
+    {
+        // Count the enemies defeated.
+
+        enemiesDestroyed++;
+
+        // Increasing efficiency with every 10 kills.
+
+        if(enemiesDestroyed % efficiencyIncreasePerKill == 0)
+        {
+            maxEfficiency++;
+
+            Debug.Log("Efficiency raised to: " + maxEfficiency);
+        }
+    }
+
+    public void WaveCompleted()
+    {
+        // Efficiency increase per successful wave
+
+        maxEfficiency++;
+
+        Debug.Log("Ta-taa-ta-ra, Wave Completed! Efficiency: " + maxEfficiency);
+    }
+
     public void WinGame()
     {
-        //isGameEnded = true;
-        isFastForwarding = false;
-        isPaused = false;
 
-        gameWinPanel.SetActive(true);
+        if (isGameEnded)
+            return;
+        
+            isGameEnded = true;
+            isFastForwarding = false;
+            isPaused = false;
 
-        Time.timeScale = 0f;
+            gameWinPanel.SetActive(true);
+
+            Debug.Log("YOU WIN!");
+    }
+
+    public void RetryGame()
+    {
+        Time.timeScale = 1f;
         Time.fixedDeltaTime = defaultFixedDeltaTime;
 
-        Debug.Log("YOU WIN!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
     }
 }

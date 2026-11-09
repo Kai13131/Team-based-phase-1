@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0515ca126facf4f40a8bf40b70852120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  health: 500
+  health: 100
 --- !u!50 &8382762233250844328
 Rigidbody2D:
   serializedVersion: 5
