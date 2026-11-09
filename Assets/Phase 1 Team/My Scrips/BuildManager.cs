@@ -11,10 +11,13 @@ public class BuildManager : MonoBehaviour
     private GameObject selectedTower;
 
     public GameObject buildTiles;
+    public float h_offset = 0.5f;
+
 
     [Header("Building Time Scale")]
     [SerializeField] private float buildTimeScale = 0.5f;
-    private bool isCurrentlyBuilding = false;   
+    private bool isCurrentlyBuilding = false;
+
 
     void Awake()
     {
@@ -89,6 +92,10 @@ public class BuildManager : MonoBehaviour
         }
 
         // Spawn the selected tower.
+
+        //Height offset add
+        position = new Vector2(position.x, position.y + h_offset);
+
         GameObject newTower = Instantiate(selectedTower,position,Quaternion.identity);
 
         // Get the existing Towers component.

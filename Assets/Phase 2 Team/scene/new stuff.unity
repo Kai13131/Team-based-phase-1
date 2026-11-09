@@ -6142,6 +6142,7 @@ MonoBehaviour:
   IceTowerPrefab: {fileID: 6377067038368873698, guid: 1f5144febbd862c48af95b12a71ec053, type: 3}
   MagicTowerPrefab: {fileID: 1826288023490369252, guid: f32097c64361c6d4fb2d60c05e45bcac, type: 3}
   buildTiles: {fileID: 1766968784}
+  h_offset: 0.5
   buildTimeScale: 0.5
 --- !u!1 &1335644868
 GameObject:
@@ -8880,13 +8881,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawnerV2
   waves:
   - groups:
-    - enemyPrefab: {fileID: 19945890989971480, guid: af2685c92ce224049b22a65bd7b39121, type: 3}
+    - enemyPrefab: {fileID: 19945890989971480, guid: 0334f0d20b4c0a0439bccef8be3b3c8b, type: 3}
       count: 5
       pathNumber: 0
-    - enemyPrefab: {fileID: 19945890989971480, guid: af2685c92ce224049b22a65bd7b39121, type: 3}
+    - enemyPrefab: {fileID: 1391945359900165791, guid: d8621fe62544d914fab08ac1c87923c0, type: 3}
       count: 5
       pathNumber: 1
-    - enemyPrefab: {fileID: 19945890989971480, guid: af2685c92ce224049b22a65bd7b39121, type: 3}
+    - enemyPrefab: {fileID: 3218364987091740020, guid: 3ee25374450e5b447861e7efd19b1b45, type: 3}
       count: 5
       pathNumber: 2
   spawnPositions:
