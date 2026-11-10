@@ -74,7 +74,7 @@ public class EnemyMovementV2 : MonoBehaviour
         else if (pathNumber == 1)
         {
 
-            for (int i = 0; i < waypoints.Length; i++)
+            for (int i = 0; i < waypoints_1.Length; i++)
             {
                 // Assign each child transform to the waypoints array
                 waypoints_1[i] = waypointParent_1.transform.GetChild(i);
@@ -82,7 +82,7 @@ public class EnemyMovementV2 : MonoBehaviour
         }
         else if (pathNumber == 2)
         {
-            for (int i = 0; i < waypoints.Length; i++)
+            for (int i = 0; i < waypoints_2.Length; i++)
             {
                 // Assign each child transform to the waypoints array
                 waypoints_2[i] = waypointParent_2.transform.GetChild(i);

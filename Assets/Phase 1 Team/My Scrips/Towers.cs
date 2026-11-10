@@ -12,7 +12,7 @@ public class Towers : MonoBehaviour
     // Cost of the tower
     public int efficiencyCost = 1;
     public int upgradeEfficiencyCost = 1;
-    
+
 
     // Tracks effienciency consumed by the tower.
 
@@ -83,7 +83,7 @@ public class Towers : MonoBehaviour
         }
 
         totalEfficiencyUsed = 0;
-        }
+    }
     public void Upgrade()
     {
         if (upgradeLevel >= maxUpgradeLevel)
@@ -234,7 +234,7 @@ public class Towers : MonoBehaviour
             ReleaseEfficiency();
         }
     }
-
+}
     //private void UpdateSprite()
     //{
     //    if (spriteRenderer == null)
@@ -248,4 +248,3 @@ public class Towers : MonoBehaviour
     //        spriteRenderer.sprite = level2Sprite;
     //    }
     //}
-}

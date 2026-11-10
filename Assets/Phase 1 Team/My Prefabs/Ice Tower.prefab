@@ -108,7 +108,7 @@ MonoBehaviour:
   efficiencyCost: 2
   upgradeEfficiencyCost: 1
   towerType: 1
-  bulletPrefab: {fileID: 202945021396969657, guid: 7521a0b28d0d36b458841bdafcba84ee, type: 3}
+  bulletPrefab: {fileID: 202945021396969657, guid: ef50782569c048d40aa9343185c31f4d, type: 3}
   attackSpeed: 1
   range: 7
   bulletDamage: 15
