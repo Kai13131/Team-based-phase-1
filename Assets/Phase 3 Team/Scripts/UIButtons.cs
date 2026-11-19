@@ -26,7 +26,9 @@ public class UIButtons : MonoBehaviour
     public GameObject Towerbuildtab;
     public Button Towerbuildbutton1;
     public Button Towerbuildbutton2;
-    public Button Towerbuildbutton3; 
+    public Button Towerbuildbutton3;
+
+    public float TowerBuildTracker;
 
 
 
@@ -47,13 +49,13 @@ public class UIButtons : MonoBehaviour
         Towerbuildbutton.onClick.AddListener(CloseTowerTab);
 
         Button Towerbuildbutton1 = gameObject.GetComponent<Button>();
-        Towerbuildbutton.onClick.AddListener(PlaceTower1);
+        Towerbuildbutton1.onClick.AddListener(PlaceTower1);
 
         Button Towerbuildbutton2 = gameObject.GetComponent<Button>();
-        Towerbuildbutton.onClick.AddListener(PlaceTower2);
+        Towerbuildbutton2.onClick.AddListener(PlaceTower2);
 
         Button Towerbuildbutton3 = gameObject.GetComponent<Button>();
-        Towerbuildbutton.onClick.AddListener(PlaceTower3);
+        Towerbuildbutton3.onClick.AddListener(PlaceTower3);
 
         Extrasettingstab.SetActive(false);
         Towerbuildtab.SetActive(false);
@@ -64,7 +66,20 @@ public class UIButtons : MonoBehaviour
     void Update()
     {
 
+        if (TowerBuildTracker == 1)
+        {
+            selectedTower = HolyTowerPrefab;
+        }
 
+        if (TowerBuildTracker == 2)
+        {
+            selectedTower = IceTowerPrefab;
+        }
+
+        if (TowerBuildTracker == 3)
+        {
+            selectedTower = MagicTowerPrefab;
+        }
 
     }
 
@@ -107,6 +122,7 @@ public class UIButtons : MonoBehaviour
 
         Towerbuildtab.SetActive(false);
         Debug.Log("Tower 1 Placement");
+        TowerBuildTracker = 1;
 
         isCurrentlyBuilding = true;
         selectedTower = HolyTowerPrefab;
@@ -121,7 +137,12 @@ public class UIButtons : MonoBehaviour
 
         Towerbuildtab.SetActive(false);
         Debug.Log("Tower 2 Placement");
+        TowerBuildTracker = 2;
 
+        isCurrentlyBuilding = true;
+        selectedTower = IceTowerPrefab;
+        Debug.Log("Selected Slow Tower");
+        buildTiles.SetActive(true);
 
     }
 
@@ -130,7 +151,12 @@ public class UIButtons : MonoBehaviour
 
         Towerbuildtab.SetActive(false);
         Debug.Log("Tower 3 Placement");
+        TowerBuildTracker = 3;
 
+        isCurrentlyBuilding = true;
+        selectedTower = MagicTowerPrefab;
+        Debug.Log("Selected Advanced Tower");
+        buildTiles.SetActive(true);
 
     }
 

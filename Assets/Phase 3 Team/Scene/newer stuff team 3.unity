@@ -6561,7 +6561,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1142046554}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1165932886}
+        m_TargetAssemblyTypeName: UIButtons, Assembly-CSharp
+        m_MethodName: PlaceTower3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1142046554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6803,9 +6815,9 @@ MonoBehaviour:
   isCurrentlyBuilding: 0
   selectedTower: {fileID: 327261839}
   buildTiles: {fileID: 1766968784}
-  HolyTowerPrefab: {fileID: 327261839}
-  IceTowerPrefab: {fileID: 327261839}
-  MagicTowerPrefab: {fileID: 327261839}
+  HolyTowerPrefab: {fileID: 2288138275922559129, guid: 32fd07b6f9cb0154daaedb24983ed7db, type: 3}
+  IceTowerPrefab: {fileID: 6377067038368873698, guid: 1f5144febbd862c48af95b12a71ec053, type: 3}
+  MagicTowerPrefab: {fileID: 1826288023490369252, guid: f32097c64361c6d4fb2d60c05e45bcac, type: 3}
   Extrasettingsbutton: {fileID: 232389017}
   Extrasettingsbuttonclose: {fileID: 1709151003}
   Extrasettingstab: {fileID: 1564603035}
@@ -8735,7 +8747,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1450059810}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1165932886}
+        m_TargetAssemblyTypeName: UIButtons, Assembly-CSharp
+        m_MethodName: PlaceTower2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1450059810
 MonoBehaviour:
   m_ObjectHideFlags: 0
