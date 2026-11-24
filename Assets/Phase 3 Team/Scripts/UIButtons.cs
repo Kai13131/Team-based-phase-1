@@ -7,6 +7,12 @@ using UnityEngine.UI;
 public class UIButtons : MonoBehaviour
 {
     [SerializeField] private bool isCurrentlyBuilding;
+    [SerializeField] private bool isPaused;
+    [SerializeField] private float fastForward;
+    [SerializeField] private bool isFastForwarding;
+    [SerializeField] private bool isGameEnded;
+    [SerializeField] private float defaultFixedDeltaTime;
+
     [SerializeField] private GameObject selectedTower;
     [SerializeField] public GameObject buildTiles;
 
@@ -42,6 +48,12 @@ public class UIButtons : MonoBehaviour
         Button Extrasettingsbuttonclose = gameObject.GetComponent<Button>();
         Extrasettingsbutton.onClick.AddListener(CloseSettings);
 
+        Button Extrasettingspause = gameObject.GetComponent<Button>();
+        Extrasettingspause.onClick.AddListener(Pause);
+
+        Button Extrasettingsfastfoward = gameObject.GetComponent<Button>();
+        Extrasettingsfastfoward.onClick.AddListener(FastForward);
+
         Button Towerbuildbutton = gameObject.GetComponent<Button>();
         Towerbuildbutton.onClick.AddListener(OpenTowerTab);
 
@@ -59,6 +71,8 @@ public class UIButtons : MonoBehaviour
 
         Extrasettingstab.SetActive(false);
         Towerbuildtab.SetActive(false);
+
+        selectedTower = HolyTowerPrefab;
 
     }
 
@@ -85,41 +99,68 @@ public class UIButtons : MonoBehaviour
 
     public void OpenSettings()
     {
-
         Extrasettingstab.SetActive(true);
         Debug.Log("Settings Open");
-
     }
 
     public void CloseSettings()
     {
-
         Extrasettingstab.SetActive(false);
         Debug.Log("Settings Closed");
-
     }
+
+    public void Pause()
+    {
+        if (isGameEnded)
+            return;
+
+        if (!Input.GetKeyDown(KeyCode.Escape))
+            return;
+
+        isPaused = !isPaused;
+
+        if (isPaused)
+        {
+            Time.timeScale = 0f;
+            Debug.Log("Pause");
+        }
+        else
+        {
+            Time.timeScale = isFastForwarding ? fastForward : 1f;
+            Debug.Log("Continues");
+        }
+    }
+
+    public void FastForward()
+    {
+        if (isGameEnded)
+            return;
+
+        if (!Input.GetKeyDown(KeyCode.F) || isPaused)
+            return;
+
+        isFastForwarding = !isFastForwarding;
+        Time.timeScale = isFastForwarding ? fastForward : 1f;
+        Time.fixedDeltaTime = defaultFixedDeltaTime * Time.timeScale;
+
+        Debug.Log(isFastForwarding ? "Fast Forward" : "Normal Speed");
+    }
+
 
     public void OpenTowerTab()
     {
-
         Towerbuildtab.SetActive(true);
         Debug.Log("Tower Tab Open");
-
-
     }
 
     public void CloseTowerTab()
     {
-
         Towerbuildtab.SetActive(false);
         Debug.Log("Tower Tab Close");
-
-
     }
 
     public void PlaceTower1()
     {
-
         Towerbuildtab.SetActive(false);
         Debug.Log("Tower 1 Placement");
         TowerBuildTracker = 1;
@@ -128,13 +169,10 @@ public class UIButtons : MonoBehaviour
         selectedTower = HolyTowerPrefab;
         Debug.Log("Selected Standard Tower");
         buildTiles.SetActive(true);
-
-
     }
 
     public void PlaceTower2()
     {
-
         Towerbuildtab.SetActive(false);
         Debug.Log("Tower 2 Placement");
         TowerBuildTracker = 2;
@@ -143,12 +181,10 @@ public class UIButtons : MonoBehaviour
         selectedTower = IceTowerPrefab;
         Debug.Log("Selected Slow Tower");
         buildTiles.SetActive(true);
-
     }
 
     public void PlaceTower3()
     {
-
         Towerbuildtab.SetActive(false);
         Debug.Log("Tower 3 Placement");
         TowerBuildTracker = 3;
@@ -157,7 +193,6 @@ public class UIButtons : MonoBehaviour
         selectedTower = MagicTowerPrefab;
         Debug.Log("Selected Advanced Tower");
         buildTiles.SetActive(true);
-
     }
 
 }

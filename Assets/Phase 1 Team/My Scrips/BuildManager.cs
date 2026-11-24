@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
@@ -7,8 +8,11 @@ public class BuildManager : MonoBehaviour
     public GameObject HolyTowerPrefab;
     public GameObject IceTowerPrefab;
     public GameObject MagicTowerPrefab;
+    public Button Towerbuildbutton1;
+    public Button Towerbuildbutton2;
+    public Button Towerbuildbutton3;
 
-    private GameObject selectedTower;
+    public GameObject selectedTower;
 
     public GameObject buildTiles;
     public float h_offset = 0.5f;
@@ -16,7 +20,7 @@ public class BuildManager : MonoBehaviour
 
     [Header("Building Time Scale")]
     [SerializeField] private float buildTimeScale = 0.5f;
-    private bool isCurrentlyBuilding = false;
+    public bool isCurrentlyBuilding = false;
 
 
     void Awake()
@@ -27,8 +31,9 @@ public class BuildManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        selectedTower = HolyTowerPrefab;
-        buildTiles.SetActive(false);
+
+        
+
     }
 
     // Update is called once per frame
